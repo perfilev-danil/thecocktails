@@ -1,6 +1,5 @@
-export type CocktailUI = {
+export type CocktailShortUI = {
   id: string;
   name: string;
   image: string;
-  category: string;
 };

@@ -1,4 +1,4 @@
-export type CocktailApi = {
+export type CocktailFullApi = {
   idDrink: string;
   strDrink: string;
   strDrinkAlternate: string | null;
