@@ -1,6 +1,8 @@
 export const routes = {
   Home: "/",
-  Cocktail: "/cocktail",
-  Cocktails: "/cocktails/:category",
-  Favorites: "favorites",
+  Ingredient: "/ingredient/:ingredientId",
+  Ingredients: "/ingredients/:ingredientSlug",
+  Categories: "/categories",
+  Category: "/categories/:categorySlug",
+  CategoryCocktail: "/categories/:categoryCocktail",
 };

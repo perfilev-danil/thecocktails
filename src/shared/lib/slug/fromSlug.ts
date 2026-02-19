@@ -1,1 +1,4 @@
-export const fromSlug = (slug) => slug.replace(/--/g, "/").replace(/_/g, " ");
+export const fromSlug = (slug) => {
+  if (!slug) return "";
+  return slug.replace(/--/g, "/").replace(/_/g, " ");
+};

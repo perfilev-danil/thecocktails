@@ -1,18 +1,15 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { routes } from "./routes";
-import Home from "../../pages/Home/Home";
-import Cocktail from "../../pages/Cocktail/Cocktail";
-import Cocktails from "../../pages/Home/Cocktails/Cocktails";
-import Favorites from "../../pages/Favorites/Favorites";
+import OptionsLayout from "../../pages/Options/OptionsLayout/OptionsLayout";
+import OptionedCocktails from "../../pages/Options/OptionedCocktails/OptionedCocktails";
+import OptionedCocktail from "../../pages/Options/OptionedCocktail/OptionedCocktail";
 
 const AppRouter = () => {
   return (
     <Routes>
-      <Route index element={<Home />} />
-      <Route path={routes.Cocktail} element={<Cocktail />} />
-      <Route path={routes.Cocktails} element={<Cocktails />} />
-      <Route path={routes.Favorites} element={<Favorites />} />
+      <Route path=":optionType" element={<OptionsLayout />}>
+        <Route path=":optionSlug" element={<OptionedCocktails />} />
+        <Route path=":optionSlug/:cocktailId" element={<OptionedCocktail />} />
+      </Route>
     </Routes>
   );
 };
