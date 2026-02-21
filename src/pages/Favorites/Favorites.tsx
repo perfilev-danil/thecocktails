@@ -1,5 +1,5 @@
-import { useAppSelector } from "../../app/hooks/hooks";
-import { selectFavoritesByIds } from "../../features/favorites/model/favoritesSelectors";
+import { useAppSelector } from "../../app/providers/hooks/hooks";
+import { selectFavoritesByIds } from "../../features/Cocktails/model/favoritesSelectors";
 import { useGetFavoriteCocktailsQuery } from "../../features/Cocktails/api/cocktailsApi";
 import List from "../../features/Cocktails/ui/List/List";
 

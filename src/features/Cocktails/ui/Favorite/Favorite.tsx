@@ -1,4 +1,7 @@
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks/hooks";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../../app/providers/hooks/hooks";
 import { toggleFavorite } from "../../model/favoritesSlice";
 import { selectFavoritesByIdMap } from "../../model/favoritesSelectors";
 

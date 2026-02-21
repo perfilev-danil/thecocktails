@@ -1,4 +1,4 @@
-import type { CocktailFullApi } from "../../types/api/cocktails/cocktailFullApi";
+import type { CocktailFullApi } from "../../types/api/cocktailFullApi";
 
 export const mapFullCocktailToUI = (c: CocktailFullApi) => ({
   id: c.idDrink,

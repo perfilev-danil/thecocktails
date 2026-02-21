@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useGetCocktailByIdQuery } from "../../../features/Cocktails/api/cocktailsApi";
 import { skipToken } from "@reduxjs/toolkit/query";
-import Favorite from "../../../features/favorites/ui/Favorite/Favorite";
+import Favorite from "../../../features/Cocktails/ui/Favorite/Favorite";
 
 const OptionedCocktail = () => {
   const { cocktailId } = useParams();
