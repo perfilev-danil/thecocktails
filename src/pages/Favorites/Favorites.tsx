@@ -1,7 +1,7 @@
 import { useAppSelector } from "../../app/hooks/hooks";
 import { selectFavoritesByIds } from "../../features/favorites/model/favoritesSelectors";
-import { useGetFavoriteCocktailsQuery } from "../../shared/api/cocktailsApi";
-import List from "../../shared/ui/List/List";
+import { useGetFavoriteCocktailsQuery } from "../../features/Cocktails/api/cocktailsApi";
+import List from "../../features/Cocktails/ui/List/List";
 
 const Favorites = () => {
   const favoritesByIds = useAppSelector(selectFavoritesByIds);

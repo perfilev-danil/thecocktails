@@ -1,5 +1,5 @@
-import { useOptionedData } from "../../../shared/hooks/useOptionedData";
-import Options from "../../../shared/ui/Options/Options";
+import { useOptionedData } from "../../../features/Cocktails/hooks/useOptionedData";
+import Options from "../../../features/Cocktails/ui/Options/Options";
 
 const OptionsList = () => {
   const { list } = useOptionedData();

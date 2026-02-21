@@ -3,7 +3,7 @@ import {
   fetchBaseQuery,
   type FetchBaseQueryError,
 } from "@reduxjs/toolkit/query";
-import { BASE_API } from "./baseApi";
+import { BASE_API } from "../../../shared/api/baseApi";
 import type { CocktailsFullApiResponse } from "../types/api/cocktails/cocktailsFullApiResponse";
 import type { CocktailShortUI } from "../types/ui/cocktails/cocktailShortUI";
 import type { CocktailFullUI } from "../types/ui/cocktails/cocktailFullUI";
@@ -14,7 +14,7 @@ import type { ListItem } from "../types/ui/listItems/listItem";
 import type { OptionTypes } from "../types/options/optionTypes";
 import { optionsMap } from "../lib/configs/optionsMap";
 import { optionApiKeys } from "../lib/configs/optionApiKeys";
-import type { ApiSingleField } from "../types/api/common/common";
+import type { ApiSingleField } from "../../../shared/types/common/common";
 
 export const cocktailsApi = createApi({
   reducerPath: "cocktails",

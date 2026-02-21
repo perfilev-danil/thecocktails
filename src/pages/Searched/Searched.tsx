@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { useGetCocktailsByNameQuery } from "../../shared/api/cocktailsApi";
+import { useGetCocktailsByNameQuery } from "../../features/Cocktails/api/cocktailsApi";
 import { skipToken } from "@reduxjs/toolkit/query";
-import List from "../../shared/ui/List/List";
+import List from "../../features/Cocktails/ui/List/List";
 
 const Searched = () => {
   const { cocktailName } = useParams();

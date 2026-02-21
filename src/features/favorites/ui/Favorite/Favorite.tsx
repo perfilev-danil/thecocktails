@@ -1,6 +1,6 @@
-import { useAppDispatch, useAppSelector } from "../../../app/hooks/hooks";
-import { toggleFavorite } from "../../../features/favorites/model/favoritesSlice";
-import { selectFavoritesByIdMap } from "../../../features/favorites/model/favoritesSelectors";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks/hooks";
+import { toggleFavorite } from "../../model/favoritesSlice";
+import { selectFavoritesByIdMap } from "../../model/favoritesSelectors";
 
 const Favorite = ({ itemId }: { itemId: string }) => {
   const dispatch = useAppDispatch();
@@ -15,5 +15,3 @@ const Favorite = ({ itemId }: { itemId: string }) => {
 };
 
 export default Favorite;
-//🤍❤️
-// {favorites.includes(itemId) ? "❤️" : "🤍"}

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { cocktailsApi } from "../../shared/api/cocktailsApi";
+import { cocktailsApi } from "../../features/Cocktails/api/cocktailsApi";
 import favoritesReducer from "../../features/favorites/model/favoritesSlice";
 
 export const store = configureStore({
