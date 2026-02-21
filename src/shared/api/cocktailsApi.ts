@@ -11,10 +11,10 @@ import { mapShortCocktailToUI } from "../lib/mappers/cocktailShortMapper";
 import { mapFullCocktailToUI } from "../lib/mappers/cocktailFullMapper";
 import type { OptionsApiResponse } from "../types/options/optionsApiResponse";
 import type { ListItem } from "../types/ui/listItems/listItem";
-import { mapCategoryToUI } from "../lib/mappers/categoryMapper";
-import { mapIngredientToUi } from "../lib/mappers/ingredientMapper";
 import type { OptionTypes } from "../types/options/optionTypes";
 import { optionsMap } from "../lib/configs/optionsMap";
+import { optionApiKeys } from "../lib/configs/optionApiKeys";
+import type { ApiSingleField } from "../types/api/common/common";
 
 export const cocktailsApi = createApi({
   reducerPath: "cocktails",
@@ -32,11 +32,10 @@ export const cocktailsApi = createApi({
         type: OptionTypes,
       ) => {
         if (!response.drinks) return [];
-        const mappers = {
-          categories: mapCategoryToUI,
-          ingredients: mapIngredientToUi,
-        };
-        return response.drinks.map(mappers[type]);
+        const apiKey = optionApiKeys[type];
+        return (response.drinks as ApiSingleField<typeof apiKey>[]).map(
+          (item) => ({ name: item[apiKey] }),
+        );
       },
     }),
     getCocktailsByFilter: builder.query<

@@ -1,1 +1,1 @@
-export type OptionTypes = "categories" | "ingredients";
+export type OptionTypes = "categories" | "ingredients" | "glass" | "alcoholic";

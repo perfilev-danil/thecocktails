@@ -10,6 +10,12 @@ const Navbar = () => {
         <li>
           <NavLink to="/ingredients">Ingredients</NavLink>
         </li>
+        <li>
+          <NavLink to="/alcoholic">Alcoholic</NavLink>
+        </li>
+        <li>
+          <NavLink to="/glass">Glass</NavLink>
+        </li>
       </ul>
     </nav>
   );
