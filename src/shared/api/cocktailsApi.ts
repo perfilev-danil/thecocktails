@@ -1,5 +1,8 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
-import { fetchBaseQuery } from "@reduxjs/toolkit/query";
+import {
+  fetchBaseQuery,
+  type FetchBaseQueryError,
+} from "@reduxjs/toolkit/query";
 import { BASE_API } from "./baseApi";
 import type { CocktailsFullApiResponse } from "../types/api/cocktails/cocktailsFullApiResponse";
 import type { CocktailShortUI } from "../types/ui/cocktails/cocktailShortUI";
@@ -55,6 +58,31 @@ export const cocktailsApi = createApi({
         return mapFullCocktailToUI(response.drinks[0]);
       },
     }),
+    getCocktailsByName: builder.query<CocktailShortUI[] | null, string>({
+      query: (name) => `/search.php?s=${name}`,
+      transformResponse: (response: CocktailsFullApiResponse) => {
+        if (!response.drinks) return [];
+        return response.drinks.map(mapFullCocktailToUI);
+      },
+    }),
+    getFavoriteCocktails: builder.query<CocktailShortUI[], string[]>({
+      async queryFn(favoritesById, _queryApi, _extraOptions, fetchWithBQ) {
+        try {
+          const results: CocktailFullUI[] = [];
+          for (const id of favoritesById) {
+            const res = await fetchWithBQ(`lookup.php?i=${id}`);
+            if (res.error) return { error: res.error as FetchBaseQueryError };
+            const data = res.data as CocktailsFullApiResponse;
+            if (data.drinks && data.drinks[0]) {
+              results.push(mapFullCocktailToUI(data.drinks[0]));
+            }
+          }
+          return { data: results };
+        } catch (error) {
+          return { error: error as FetchBaseQueryError };
+        }
+      },
+    }),
   }),
 });
 
@@ -62,4 +90,6 @@ export const {
   useGetListQuery,
   useGetCocktailByIdQuery,
   useGetCocktailsByFilterQuery,
+  useGetCocktailsByNameQuery,
+  useGetFavoriteCocktailsQuery,
 } = cocktailsApi;

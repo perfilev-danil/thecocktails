@@ -22,5 +22,5 @@ export const useOptionedData = () => {
       : skipToken,
   );
 
-  return { list: list ?? [], cockctails: cockctails ?? [] };
+  return { list, cockctails };
 };

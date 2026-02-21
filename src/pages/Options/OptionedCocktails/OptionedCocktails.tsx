@@ -7,7 +7,7 @@ const OptionedCocktails = () => {
   return (
     <div>
       OptionedCocktails
-      <List items={cockctails} />
+      <List items={cockctails ?? []} />
     </div>
   );
 };

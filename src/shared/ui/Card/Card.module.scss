@@ -1,0 +1,27 @@
+.card {
+  border-radius: 12px;
+  padding: 16px;
+  transition: 0.3s ease;
+
+  &:hover {
+    scale: 1.1;
+  }
+
+  &:hover .image {
+    transform: rotate(10deg);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.title {
+  font-size: 18px;
+}

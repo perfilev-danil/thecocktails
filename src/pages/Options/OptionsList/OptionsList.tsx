@@ -7,7 +7,7 @@ const OptionsList = () => {
   return (
     <div>
       OptionsList
-      <Options items={list} />
+      <Options items={list ?? []} />
     </div>
   );
 };
