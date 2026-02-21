@@ -1,6 +1,6 @@
 import Search from "../Search/Search";
 import Navbar from "../Navbar/Navbar";
-import Favorites from "../../features/favorites/ui/Favorites/Favorites";
+import Favorites from "../Favorites/Favorites";
 
 const Header = () => {
   return (

@@ -14,6 +14,7 @@ const AppRouter = () => {
       </Route>
       <Route path="/searched/:cocktailName" element={<Searched />} />
       <Route path="/favorites" element={<Favorites />} />
+      <Route path="/favorites/:cocktailId" element={<OptionedCocktail />} />
     </Routes>
   );
 };

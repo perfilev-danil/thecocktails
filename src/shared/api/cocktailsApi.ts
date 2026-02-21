@@ -68,13 +68,13 @@ export const cocktailsApi = createApi({
     getFavoriteCocktails: builder.query<CocktailShortUI[], string[]>({
       async queryFn(favoritesById, _queryApi, _extraOptions, fetchWithBQ) {
         try {
-          const results: CocktailFullUI[] = [];
+          const results: CocktailShortUI[] = [];
           for (const id of favoritesById) {
             const res = await fetchWithBQ(`lookup.php?i=${id}`);
             if (res.error) return { error: res.error as FetchBaseQueryError };
             const data = res.data as CocktailsFullApiResponse;
             if (data.drinks && data.drinks[0]) {
-              results.push(mapFullCocktailToUI(data.drinks[0]));
+              results.push(mapShortCocktailToUI(data.drinks[0]));
             }
           }
           return { data: results };

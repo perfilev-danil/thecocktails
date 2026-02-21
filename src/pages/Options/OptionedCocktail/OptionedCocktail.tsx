@@ -1,9 +1,11 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useGetCocktailByIdQuery } from "../../../shared/api/cocktailsApi";
 import { skipToken } from "@reduxjs/toolkit/query";
+import Favorite from "../../../shared/ui/Favorite/Favorite";
 
 const OptionedCocktail = () => {
   const { cocktailId } = useParams();
+
   const navigate = useNavigate();
   const { data: cocktail } = useGetCocktailByIdQuery(cocktailId ?? skipToken);
   return (
@@ -20,6 +22,7 @@ const OptionedCocktail = () => {
         <img src={cocktail?.image} alt="" style={{ height: "100px" }} />
       </div>
       <p>{cocktail?.instructions}</p>
+      {cocktailId && <Favorite itemId={cocktailId} />}
     </div>
   );
 };
