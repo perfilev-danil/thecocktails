@@ -1,9 +1,10 @@
+import styles from "./Navbar.module.scss";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
+    <nav className={styles.navbar}>
+      <ul className={styles.navbarList}>
         <li>
           <NavLink to="/categories">Categories</NavLink>
         </li>

@@ -1,29 +1,55 @@
+import styles from "./OptionedCocktail.module.scss";
 import { useParams, useNavigate } from "react-router-dom";
 import { useGetCocktailByIdQuery } from "../../../features/Cocktails/api/cocktailsApi";
 import { skipToken } from "@reduxjs/toolkit/query";
-import Favorite from "../../../features/Cocktails/ui/Favorite/Favorite";
+import FavoriteButton from "../../../features/Cocktails/ui/FavoriteButton/FavoriteButton";
 
 const OptionedCocktail = () => {
   const { cocktailId } = useParams();
 
   const navigate = useNavigate();
   const { data: cocktail } = useGetCocktailByIdQuery(cocktailId ?? skipToken);
+
   return (
-    <div>
-      <button onClick={() => navigate(-1)}>back</button>
-      <div key={cocktail?.id} style={{ display: "flex" }}>
-        <div>
-          <h1>{cocktail?.name}</h1>
-          <span>{cocktail?.tags}</span>
-          <span>{cocktail?.iba}</span>
-          <span>{cocktail?.alcoholic}</span>
-          <span>{cocktail?.glass}</span>
+    <article className={styles.cocktailInfo}>
+      <nav className={styles.cocktailInfo__navbar}>
+        <button
+          className={styles.cocktailInfo__backButton}
+          onClick={() => navigate(-1)}
+        >
+          back
+        </button>
+      </nav>
+      <section className={styles.cocktailInfo__description}>
+        <div className={styles.cocktailInfo__details}>
+          <div>
+            <header className={styles.cocktailInfo__head}>
+              <h1>{cocktail?.name}</h1>
+              {cocktailId && <FavoriteButton itemId={cocktailId} />}
+            </header>
+            <dl className={styles.cocktailInfo__meta}>
+              <dt>Tags:</dt>
+              <dd>{cocktail?.tags}</dd>
+              <dt>IBA:</dt>
+              <dd>{cocktail?.iba}</dd>
+              <dt>Alcoholic:</dt>
+              <dd>{cocktail?.alcoholic}</dd>
+              <dt>Glass:</dt>
+              <dd>{cocktail?.glass}</dd>
+            </dl>
+          </div>
+
+          <img
+            className={styles.cocktailInfo__image}
+            src={cocktail?.image}
+            alt={cocktail?.name}
+          />
         </div>
-        <img src={cocktail?.image} alt="" style={{ height: "100px" }} />
-      </div>
-      <p>{cocktail?.instructions}</p>
-      {cocktailId && <Favorite itemId={cocktailId} />}
-    </div>
+        <p className={styles.cocktailInfo__instructions}>
+          {cocktail?.instructions}
+        </p>
+      </section>
+    </article>
   );
 };
 

@@ -1,14 +1,16 @@
-import Search from "../Search/Search";
+import styles from "./Header.module.scss";
 import Navbar from "../Navbar/Navbar";
+import Search from "../Search/Search";
 import Favorites from "../Favorites/Favorites";
 
 const Header = () => {
   return (
-    <div>
-      <Search />
+    <header className={styles.header}>
+      <span>theCocktails</span>
       <Navbar />
+      <Search />
       <Favorites />
-    </div>
+    </header>
   );
 };
 

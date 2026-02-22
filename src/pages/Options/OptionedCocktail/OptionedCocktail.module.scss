@@ -1,0 +1,43 @@
+@use "../../../shared/styles/abstracts/mixins" as m;
+
+.cocktailInfo {
+  width: 100%;
+
+  &__navbar {
+  }
+
+  &__backButton {
+  }
+
+  &__description {
+  }
+
+  &__details {
+    @include m.d-flex($align: flex-start);
+  }
+
+  &__head {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__meta {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    dt {
+      font-weight: bold;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 20%;
+    object-fit: cover;
+    object-position: center;
+    @include m.bordered();
+  }
+
+  &__instructions {
+    text-wrap: pretty;
+  }
+}

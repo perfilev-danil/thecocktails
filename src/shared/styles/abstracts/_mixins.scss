@@ -1,0 +1,11 @@
+@mixin d-flex($justify: space-between, $align: center, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin bordered($width: 1px, $style: solid, $color: black, $radius: 8px) {
+  border: $width $style $color;
+  border-radius: $radius;
+}

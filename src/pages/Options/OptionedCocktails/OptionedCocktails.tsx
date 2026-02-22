@@ -5,10 +5,10 @@ const OptionedCocktails = () => {
   const { cockctails } = useOptionedData();
 
   return (
-    <div>
+    <section>
       OptionedCocktails
       <List items={cockctails ?? []} />
-    </div>
+    </section>
   );
 };
 

@@ -1,0 +1,24 @@
+// base
+@use "./base/normalize";
+@use "./base/reset";
+
+// tokens
+@use "./tokens/colors";
+@use "./tokens/fonts";
+@use "./tokens/typography";
+
+// abstracts
+@use "./abstracts/mixins";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@media (max-width: 800px) {
+  html,
+  body,
+  #root {
+  }
+}

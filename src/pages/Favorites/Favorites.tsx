@@ -8,7 +8,12 @@ const Favorites = () => {
 
   const { data: cocktails } = useGetFavoriteCocktailsQuery(favoritesByIds);
 
-  return <List items={cocktails ?? []} />;
+  return (
+    <section>
+      <h1>favorites</h1>
+      <List items={cocktails ?? []} />
+    </section>
+  );
 };
 
 export default Favorites;

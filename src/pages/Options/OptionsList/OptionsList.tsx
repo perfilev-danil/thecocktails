@@ -1,3 +1,4 @@
+import styles from "./OptionsList.module.scss";
 import { useOptionedData } from "../../../features/Cocktails/hooks/useOptionedData";
 import Options from "../../../features/Cocktails/ui/Options/Options";
 
@@ -5,10 +6,10 @@ const OptionsList = () => {
   const { list } = useOptionedData();
 
   return (
-    <div>
+    <aside className={styles.options}>
       OptionsList
       <Options items={list ?? []} />
-    </div>
+    </aside>
   );
 };
 

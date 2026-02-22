@@ -1,0 +1,7 @@
+@use "../shared/styles/abstracts/mixins" as m;
+
+.main {
+  @include m.d-flex($justify: start, $align: flex-start);
+  gap: 20px;
+  height: 100%;
+}

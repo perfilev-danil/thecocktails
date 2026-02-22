@@ -1,21 +1,27 @@
+import styles from "./Search.module.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import searchImg from "../../assets/ui/search.svg";
 
 const Search = () => {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearch = async () => {
+    if (!searchValue.trim()) return null;
     navigate(`/searched/${searchValue}`);
   };
 
   return (
-    <div>
+    <div className={styles.search}>
       <input
+        className={styles.search__input}
         onChange={(e) => setSearchValue(e.target.value)}
         placeholder="Cocktail name"
       />
-      <button onClick={handleSearch}>search</button>
+      <button className={styles.search__button} onClick={handleSearch}>
+        <img className={styles.search__icon} src={searchImg} />
+      </button>
     </div>
   );
 };
