@@ -21,8 +21,8 @@ const OptionedCocktail = () => {
         </button>
       </nav>
       <section className={styles.cocktailInfo__description}>
-        <div className={styles.cocktailInfo__details}>
-          <div>
+        <div className={styles.cocktailInfo__card}>
+          <div className={styles.cocktailInfo__details}>
             <header className={styles.cocktailInfo__head}>
               <h1>{cocktail?.name}</h1>
               {cocktailId && <FavoriteButton itemId={cocktailId} />}

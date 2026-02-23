@@ -12,8 +12,14 @@
   &__description {
   }
 
+  &__card {
+    @include m.d-flex($align: stretch);
+  }
+
   &__details {
-    @include m.d-flex($align: flex-start);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__head {

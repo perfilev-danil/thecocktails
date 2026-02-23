@@ -1,10 +1,11 @@
 @use "../../shared/styles/abstracts/mixins" as m;
 
 .search {
-  padding: 10px;
+  height: 40px;
+  padding: 5px;
   @include m.d-flex();
   @include m.bordered();
-  gap: 10px;
+  gap: 5px;
 
   &__input {
     height: 30px;

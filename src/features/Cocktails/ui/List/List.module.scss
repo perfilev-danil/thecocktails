@@ -1,9 +1,12 @@
 .list {
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
-
+  flex-wrap: wrap;
+  overflow-y: auto;
   &__item {
+    height: calc((100% - 20px) / 2);
     width: calc((100% - 60px) / 4);
   }
 }
