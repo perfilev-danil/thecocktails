@@ -1,5 +1,3 @@
-export type CocktailShortUI = {
-  id: string;
-  name: string;
-  image: string;
-};
+import type { CocktailFullUI } from "./cocktailFullUI";
+
+export type CocktailShortUI = Pick<CocktailFullUI, "id" | "name" | "image">;
