@@ -10,6 +10,9 @@
   }
 
   &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   &__card {
@@ -29,8 +32,10 @@
   }
 
   &__meta {
+    align-self: flex-end;
     display: grid;
-    grid-template-columns: 100px 1fr;
+    height: min-content;
+    grid-template-columns: 150px 1fr;
   }
 
   &__image {

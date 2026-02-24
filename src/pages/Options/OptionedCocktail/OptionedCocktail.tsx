@@ -4,11 +4,13 @@ import { useGetCocktailByIdQuery } from "../../../features/Cocktails/api/cocktai
 import { skipToken } from "@reduxjs/toolkit/query";
 import FavoriteButton from "../../../features/Cocktails/ui/FavoriteButton/FavoriteButton";
 import BackButton from "../../../shared/ui/BackButton/BackButton";
+import React from "react";
 
 const OptionedCocktail = () => {
   const { cocktailId } = useParams();
 
   const { data: cocktail } = useGetCocktailByIdQuery(cocktailId ?? skipToken);
+  console.log(cocktail);
 
   return (
     <article className={styles.cocktailInfo}>
@@ -43,12 +45,24 @@ const OptionedCocktail = () => {
             </dl>
           </div>
 
+          <dl className={styles.cocktailInfo__meta}>
+            {cocktail?.ingredients.map((ingredient) => {
+              return (
+                <React.Fragment key={ingredient.name}>
+                  <dd>{ingredient.name}</dd>
+                  <dd>{ingredient.measure || "to taste"}</dd>
+                </React.Fragment>
+              );
+            })}
+          </dl>
+
           <img
             className={styles.cocktailInfo__image}
             src={cocktail?.image}
             alt={cocktail?.name}
           />
         </div>
+
         <p className={styles.cocktailInfo__instructions}>
           {cocktail?.instructions}
         </p>

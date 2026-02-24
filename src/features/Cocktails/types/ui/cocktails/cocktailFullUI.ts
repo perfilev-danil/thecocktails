@@ -8,4 +8,8 @@ export type CocktailFullUI = {
   glass: string;
   instructions: string;
   image: string;
+  ingredients: {
+    name: string;
+    measure: string;
+  }[];
 };
