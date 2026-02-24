@@ -1,0 +1,7 @@
+@use "../../shared/styles/abstracts/mixins" as m;
+
+.home {
+  height: 100%;
+  width: 100%;
+  @include m.bordered();
+}
