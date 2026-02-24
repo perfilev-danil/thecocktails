@@ -1,37 +1,41 @@
 import styles from "./OptionedCocktail.module.scss";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useGetCocktailByIdQuery } from "../../../features/Cocktails/api/cocktailsApi";
 import { skipToken } from "@reduxjs/toolkit/query";
 import FavoriteButton from "../../../features/Cocktails/ui/FavoriteButton/FavoriteButton";
+import BackButton from "../../../shared/ui/BackButton/BackButton";
 
 const OptionedCocktail = () => {
   const { cocktailId } = useParams();
 
-  const navigate = useNavigate();
   const { data: cocktail } = useGetCocktailByIdQuery(cocktailId ?? skipToken);
 
   return (
     <article className={styles.cocktailInfo}>
-      <nav className={styles.cocktailInfo__navbar}>
-        <button
-          className={styles.cocktailInfo__backButton}
-          onClick={() => navigate(-1)}
-        >
-          back
-        </button>
-      </nav>
       <section className={styles.cocktailInfo__description}>
         <div className={styles.cocktailInfo__card}>
           <div className={styles.cocktailInfo__details}>
+            <nav className={styles.cocktailInfo__navbar}>
+              <BackButton />
+            </nav>
             <header className={styles.cocktailInfo__head}>
               <h1>{cocktail?.name}</h1>
               {cocktailId && <FavoriteButton itemId={cocktailId} />}
             </header>
             <dl className={styles.cocktailInfo__meta}>
-              <dt>Tags:</dt>
-              <dd>{cocktail?.tags}</dd>
-              <dt>IBA:</dt>
-              <dd>{cocktail?.iba}</dd>
+              {cocktail?.tags && (
+                <>
+                  <dt>Tags:</dt>
+                  <dd>{cocktail?.tags}</dd>
+                </>
+              )}
+              {cocktail?.iba && (
+                <>
+                  <dt>IBA:</dt>
+                  <dd>{cocktail?.iba}</dd>
+                </>
+              )}
+
               <dt>Alcoholic:</dt>
               <dd>{cocktail?.alcoholic}</dd>
               <dt>Glass:</dt>

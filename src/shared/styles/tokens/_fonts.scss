@@ -1,15 +1,20 @@
 @font-face {
-  font-family: "Absans";
-  src: url("../../assets/fonts/Absans-Regular.otf") format("opentype");
+  font-family: "Hotamie";
+  src: url("../../../assets/fonts/Hotamie.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("../../assets/fonts/Montserrat-bold.ttf") format("truetype");
+  font-family: "Raleway";
+  src: url("../../../assets/fonts/Raleway.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("../../assets/fonts/Montserrat-italic.ttf") format("truetype");
+  font-family: "Raleway";
+  src: url("../../../assets/fonts/Raleway-Italic.ttf") format("truetype");
   font-style: italic;
+}
+
+@font-face {
+  font-family: "Cedarville";
+  src: url("../../../assets/fonts/Cedarville.ttf") format("truetype");
 }

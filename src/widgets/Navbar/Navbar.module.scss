@@ -1,7 +1,10 @@
 .navbar {
-}
-
-.navbarList {
-  display: flex;
-  gap: 8px;
+  &__list {
+    display: flex;
+    gap: 8px;
+  }
+  &__list li {
+    display: flex;
+    align-items: center;
+  }
 }

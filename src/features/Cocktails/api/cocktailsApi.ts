@@ -4,7 +4,7 @@ import {
   type FetchBaseQueryError,
 } from "@reduxjs/toolkit/query";
 import { BASE_API } from "../../../shared/api/baseApi";
-import type { CocktailsFullApiResponse } from "../types/api/cocktails/cocktailsFullApiResponse";
+import type { CocktailsFullApiResponse } from "../types/api/cocktailsFullApiResponse";
 import type { CocktailShortUI } from "../types/ui/cocktails/cocktailShortUI";
 import type { CocktailFullUI } from "../types/ui/cocktails/cocktailFullUI";
 import { mapShortCocktailToUI } from "../lib/mappers/cocktailShortMapper";

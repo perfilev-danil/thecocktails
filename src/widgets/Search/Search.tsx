@@ -17,7 +17,7 @@ const Search = () => {
       <input
         className={styles.search__input}
         onChange={(e) => setSearchValue(e.target.value)}
-        placeholder="Cocktail name"
+        placeholder="Cocktail ..."
       />
       <button className={styles.search__button} onClick={handleSearch}>
         <img className={styles.search__icon} src={searchImg} />

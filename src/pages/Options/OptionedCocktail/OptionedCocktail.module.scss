@@ -24,15 +24,13 @@
 
   &__head {
     display: flex;
+    align-items: center;
     gap: 20px;
   }
 
   &__meta {
     display: grid;
-    grid-template-columns: 80px 1fr;
-    dt {
-      font-weight: bold;
-    }
+    grid-template-columns: 100px 1fr;
   }
 
   &__image {
