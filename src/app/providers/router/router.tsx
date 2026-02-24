@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Home from "../../../pages/Home/Home";
 import OptionsLayout from "../../../pages/Options/OptionsLayout/OptionsLayout";
 import OptionedCocktails from "../../../pages/Options/OptionedCocktails/OptionedCocktails";
 import OptionedCocktail from "../../../pages/Options/OptionedCocktail/OptionedCocktail";
@@ -8,6 +9,7 @@ import Favorites from "../../../pages/Favorites/Favorites";
 const AppRouter = () => {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path=":optionType" element={<OptionsLayout />}>
         <Route path=":optionSlug" element={<OptionedCocktails />} />
         <Route path=":optionSlug/:cocktailId" element={<OptionedCocktail />} />
