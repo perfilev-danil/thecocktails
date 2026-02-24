@@ -1,6 +1,8 @@
+@use "../../../shared/styles/abstracts/mixins" as m;
+
 .options {
   height: 100%;
-  width: 150px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;

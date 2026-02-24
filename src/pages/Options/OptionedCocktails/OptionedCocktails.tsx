@@ -7,7 +7,6 @@ const OptionedCocktails = () => {
 
   return (
     <section className={styles.cocktails}>
-      OptionedCocktails
       <List items={cockctails ?? []} />
     </section>
   );

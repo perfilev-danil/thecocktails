@@ -1,15 +1,12 @@
 @use "../../shared/styles/abstracts/mixins" as m;
 
 .search {
-  height: 40px;
-  padding: 5px;
   @include m.d-flex();
-  @include m.bordered();
   gap: 5px;
 
   &__input {
-    height: 30px;
     border: none;
+    background-color: transparent;
   }
 
   &__input:focus {
@@ -17,10 +14,10 @@
   }
 
   &__button {
-    height: 30px;
-    width: 30px;
   }
 
   &__icon {
+    height: 20px;
+    width: 20px;
   }
 }

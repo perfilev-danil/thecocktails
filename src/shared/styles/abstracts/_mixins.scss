@@ -5,7 +5,37 @@
   flex-wrap: $wrap;
 }
 
-@mixin bordered($width: 1px, $style: solid, $color: black, $radius: 8px) {
+@mixin bordered($width: 1px, $style: solid, $color: black, $radius: 20px) {
   border: $width $style $color;
   border-radius: $radius;
+}
+
+@mixin layout-bar {
+  height: 40px;
+  width: 100%;
+  padding: 10px;
+  @include d-flex();
+  @include bordered();
+}
+
+@mixin scroll-container {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 1px;
+  }
 }

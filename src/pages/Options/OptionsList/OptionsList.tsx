@@ -7,7 +7,6 @@ const OptionsList = () => {
 
   return (
     <aside className={styles.options}>
-      OptionsList
       <Options items={list ?? []} />
     </aside>
   );
