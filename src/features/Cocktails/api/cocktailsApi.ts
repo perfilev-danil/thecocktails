@@ -51,13 +51,13 @@ export const cocktailsApi = createApi({
       },
     }),
     getCocktailById: builder.query<CocktailFullUI | null, string>({
-      query: (id) => `${BASE_API}/lookup.php?i=${id}`,
+      query: (id) => `/lookup.php?i=${id}`,
       transformResponse: (response: CocktailsFullApiResponse) => {
         if (!response.drinks) return null;
         return mapFullCocktailToUI(response.drinks[0]);
       },
     }),
-    getCocktailsByName: builder.query<CocktailShortUI[] | null, string>({
+    getCocktailsByName: builder.query<CocktailFullUI[] | null, string>({
       query: (name) => `/search.php?s=${name}`,
       transformResponse: (response: CocktailsFullApiResponse) => {
         if (!response.drinks) return [];
@@ -67,13 +67,17 @@ export const cocktailsApi = createApi({
     getFavoriteCocktails: builder.query<CocktailShortUI[], string[]>({
       async queryFn(favoritesById, _queryApi, _extraOptions, fetchWithBQ) {
         try {
+          const requests = favoritesById.map((id) =>
+            fetchWithBQ(`lookup.php?i=${id}`),
+          );
+          const responses = await Promise.all(requests);
           const results: CocktailShortUI[] = [];
-          for (const id of favoritesById) {
-            const res = await fetchWithBQ(`lookup.php?i=${id}`);
-            if (res.error) return { error: res.error as FetchBaseQueryError };
-            const data = res.data as CocktailsFullApiResponse;
-            if (data.drinks && data.drinks[0]) {
-              results.push(mapShortCocktailToUI(data.drinks[0]));
+          for (const res of responses) {
+            if (!res.error) {
+              const data = res.data as CocktailsFullApiResponse;
+              if (data.drinks?.[0]) {
+                results.push(mapShortCocktailToUI(data.drinks[0]));
+              }
             }
           }
           return { data: results };
