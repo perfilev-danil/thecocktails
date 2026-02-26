@@ -5,7 +5,7 @@
   flex-wrap: $wrap;
 }
 
-@mixin bordered($width: 1px, $style: solid, $color: black, $radius: 20px) {
+@mixin bordered($width: 1px, $style: solid, $color: transparent, $radius: 0px) {
   border: $width $style $color;
   border-radius: $radius;
 }
@@ -13,9 +13,17 @@
 @mixin layout-bar {
   height: 40px;
   width: 100%;
-  padding: 10px;
+  //padding: 10px;
   @include d-flex();
   @include bordered();
+  //@include blur();
+}
+
+@mixin blur {
+  background: rgba(255, 255, 255, 0.336);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 @mixin scroll-container {
@@ -30,12 +38,11 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: black;
+    background: rgb(255, 255, 255);
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: black;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 0, 0);
     border-radius: 1px;
   }
 }

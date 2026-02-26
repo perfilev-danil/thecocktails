@@ -1,10 +1,28 @@
+@use "../../shared/styles/abstracts/mixins" as m;
+
 .favorites {
-  height: 20px;
-  width: 20px;
-  display: block;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
   &__icon {
-    height: 100%;
-    width: 100%;
+    height: 20px;
+    width: 20px;
+  }
+
+  &__badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    height: 18px;
+    width: 18px;
+    font-size: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 100%;
+    @include m.d-flex($justify: center);
   }
 }

@@ -1,5 +1,5 @@
 $font-primary:
-  "Raleway",
+  "Poiret",
   system-ui,
   -apple-system,
   sans-serif;
@@ -9,30 +9,31 @@ $font-secondary: "Montserrat", Georgia, serif;
 html,
 body,
 #root {
-  font-family: $font-primary;
+  font-family: "Albert";
   line-height: 2;
   font-size: 16px;
+  color: white;
 }
 
 .logo {
-  font-family: "Hotamie", Helvetica, sans-serif;
-  color: red;
+  font-family: "Homemade", Helvetica, sans-serif;
+  font-size: 20px;
 }
 
 h1 {
-  font-family: "Raleway", Helvetica, sans-serif;
+  font-family: "Albert", Helvetica, sans-serif;
   font-size: 16px;
   font-weight: normal;
 }
 
 h2 {
-  font-family: "Raleway", Helvetica, sans-serif;
+  font-family: "Albert", Helvetica, sans-serif;
   font-size: 16px;
   font-weight: normal;
 }
 
 dt {
-  font-family: "Raleway", Helvetica, sans-serif;
+  font-family: "Albert", Helvetica, sans-serif;
   font-size: 16px;
 }
 
