@@ -2,6 +2,7 @@ import styles from "./Navbar.module.scss";
 import { NavLink } from "react-router-dom";
 import Favorites from "../Favorites/Favorites";
 import { routes } from "../../app/providers/router/routes";
+import { getNavLinkClass } from "../../features/Cocktails/lib/nav/nav";
 const Navbar = () => {
   const links = [
     { path: routes.Categories, label: "Categories" },
@@ -9,8 +10,7 @@ const Navbar = () => {
     { path: routes.Alcoholic, label: "Alcoholic" },
     { path: routes.Glass, label: "Glass" },
   ];
-  const toActive = ({ isActive }: { isActive: boolean }) =>
-    isActive ? styles.navbar__active : "";
+  const toActive = getNavLinkClass(styles.navbar__active);
   return (
     <nav className={styles.navbar}>
       <ul className={styles.navbar__list}>

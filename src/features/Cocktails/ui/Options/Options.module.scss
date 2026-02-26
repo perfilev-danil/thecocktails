@@ -7,4 +7,8 @@
   &__item {
     scroll-snap-align: start;
   }
+
+  &__active {
+    color: red;
+  }
 }
