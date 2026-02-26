@@ -1,13 +1,14 @@
 import styles from "./OptionsList.module.scss";
 import { useOptionedData } from "../../../features/Cocktails/hooks/useOptionedData";
 import Options from "../../../features/Cocktails/ui/Options/Options";
+import Loading from "../../../shared/ui/Loading/Loading";
 
 const OptionsList = () => {
-  const { list } = useOptionedData();
+  const { list, isListLoading } = useOptionedData();
 
   return (
     <aside className={styles.options}>
-      <Options items={list ?? []} />
+      {isListLoading ? <Loading /> : <Options items={list ?? []} />}
     </aside>
   );
 };

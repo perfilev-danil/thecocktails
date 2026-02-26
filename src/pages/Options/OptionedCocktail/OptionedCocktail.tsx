@@ -5,12 +5,21 @@ import { skipToken } from "@reduxjs/toolkit/query";
 import FavoriteButton from "../../../features/Cocktails/ui/FavoriteButton/FavoriteButton";
 import BackButton from "../../../shared/ui/BackButton/BackButton";
 import React from "react";
+import Loading from "../../../shared/ui/Loading/Loading";
 
 const OptionedCocktail = () => {
   const { cocktailId } = useParams();
 
-  const { data: cocktail } = useGetCocktailByIdQuery(cocktailId ?? skipToken);
-  console.log(cocktail);
+  const { data: cocktail, isLoading } = useGetCocktailByIdQuery(
+    cocktailId ?? skipToken,
+  );
+
+  if (isLoading)
+    return (
+      <section className={styles.cocktail}>
+        <Loading />
+      </section>
+    );
 
   return (
     <article className={styles.cocktail}>

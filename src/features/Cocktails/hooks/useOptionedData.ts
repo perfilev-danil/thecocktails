@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import type { OptionTypes } from "../types/options/optionTypes";
 import { useGetListQuery } from "../api/cocktailsApi";
 import { useGetCocktailsByFilterQuery } from "../api/cocktailsApi";
-
 import { skipToken } from "@reduxjs/toolkit/query";
 import { fromSlug } from "../lib/slug/fromSlug";
 
@@ -11,16 +10,15 @@ export const useOptionedData = () => {
     optionType: OptionTypes;
     optionSlug: string;
   }>();
-
-  const { data: list } = useGetListQuery(optionType ?? skipToken);
-
-  const decodedSlug = fromSlug(optionSlug);
-
-  const { data: cockctails } = useGetCocktailsByFilterQuery(
-    optionType && decodedSlug
-      ? { type: optionType, slug: decodedSlug }
-      : skipToken,
+  const { data: list, isLoading: isListLoading } = useGetListQuery(
+    optionType ?? skipToken,
   );
-
-  return { list, cockctails };
+  const decodedSlug = fromSlug(optionSlug);
+  const { data: cocktails, isLoading: isCocktailsLoading } =
+    useGetCocktailsByFilterQuery(
+      optionType && decodedSlug
+        ? { type: optionType, slug: decodedSlug }
+        : skipToken,
+    );
+  return { list, isListLoading, cocktails, isCocktailsLoading };
 };
