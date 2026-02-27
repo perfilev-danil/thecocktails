@@ -45,7 +45,7 @@ export const cocktailsApi = createApi({
       query: ({ type, slug }) => {
         return `filter.php?${optionsMap[type]}=${encodeURIComponent(slug)}`;
       },
-      transformResponse: (response: OptionsApiResponse) => {
+      transformResponse: (response: CocktailsFullApiResponse) => {
         if (!response.drinks) return [];
         return response.drinks.map(mapShortCocktailToUI);
       },

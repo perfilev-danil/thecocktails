@@ -3,7 +3,7 @@ import type { OptionTypes } from "../types/options/optionTypes";
 import { useGetListQuery } from "../api/cocktailsApi";
 import { useGetCocktailsByFilterQuery } from "../api/cocktailsApi";
 import { skipToken } from "@reduxjs/toolkit/query";
-import { fromSlug } from "../lib/slug/fromSlug";
+import { fromSlug } from "../lib/utils/slug/fromSlug";
 
 export const useOptionedData = () => {
   const { optionType, optionSlug } = useParams<{

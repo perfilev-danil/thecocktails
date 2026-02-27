@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { cocktailsApi } from "../../../features/Cocktails/api/cocktailsApi";
+import verificationReducer from "../../../features/Verification/model/verificationSlice";
 import favoritesReducer from "../../../features/Cocktails/model/favoritesSlice";
 
 export const store = configureStore({
   reducer: {
+    verification: verificationReducer,
     favorites: favoritesReducer,
     [cocktailsApi.reducerPath]: cocktailsApi.reducer,
   },

@@ -1,0 +1,26 @@
+@use "../../../shared/styles/abstracts/mixins" as m;
+
+.verification {
+  height: 100%;
+  width: 100%;
+  @include m.d-flex($justify: center);
+
+  position: absolute;
+
+  &__modal {
+    text-align: center;
+  }
+
+  &__content p:last-child {
+    color: red;
+  }
+
+  &__buttons {
+    @include m.d-flex($justify: center);
+    gap: 40px;
+  }
+
+  &__buttons button {
+    cursor: pointer;
+  }
+}

@@ -5,7 +5,6 @@ import Loading from "../../../shared/ui/Loading/Loading";
 
 const OptionedCocktails = () => {
   const { cocktails, isCocktailsLoading } = useOptionedData();
-
   return (
     <section className={styles.cocktails}>
       {isCocktailsLoading ? <Loading /> : <List items={cocktails ?? []} />}

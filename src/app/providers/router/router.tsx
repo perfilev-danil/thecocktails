@@ -3,7 +3,7 @@ import Home from "../../../pages/Home/Home";
 import OptionsLayout from "../../../pages/Options/OptionsLayout/OptionsLayout";
 import OptionedCocktails from "../../../pages/Options/OptionedCocktails/OptionedCocktails";
 import OptionedCocktail from "../../../pages/Options/OptionedCocktail/OptionedCocktail";
-import Searched from "../../../pages/Searched/Searched";
+import Searched from "../../../pages/Searched/SearchedCocktails/SearchedCocktails";
 import Favorites from "../../../pages/Favorites/Favorites";
 
 const AppRouter = () => {
@@ -15,6 +15,10 @@ const AppRouter = () => {
         <Route path=":optionSlug/:cocktailId" element={<OptionedCocktail />} />
       </Route>
       <Route path="/searched/:cocktailName" element={<Searched />} />
+      <Route
+        path="/searched/:cocktailName/:cocktailId"
+        element={<OptionedCocktail />}
+      />
       <Route path="/favorites" element={<Favorites />} />
       <Route path="/favorites/:cocktailId" element={<OptionedCocktail />} />
     </Routes>

@@ -1,8 +1,8 @@
 import styles from "./Options.module.scss";
 import type { ListItem } from "../../types/ui/listItems/listItem";
 import { NavLink } from "react-router-dom";
-import { toSlug } from "../../lib/slug/toSlug";
-import { getNavLinkClass } from "../../lib/nav/nav";
+import { toSlug } from "../../lib/utils/slug/toSlug";
+import { getNavLinkClass } from "../../lib/utils/nav/nav";
 const Options = ({ items }: { items: ListItem[] }) => {
   if (!items) {
     return <div>no options!</div>;
