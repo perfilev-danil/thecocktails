@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-
   const toActive = getNavLinkClass(styles.navbar__active);
   const handleOpen = () => {
     setOpen(true);
@@ -58,27 +57,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-/*
-
-<>
-      <nav className={styles.navbar}>
-        {!isOpen && navList}
-        <button
-          className={styles.navbar__burger}
-          onClick={toggleOpen}
-          aria-label="Toggle navigation menu"
-        >
-          =
-        </button>
-        {isOpen &&
-          createPortal(
-            <div className={styles.wrapper} onClick={toggleOpen}>
-              {navList}
-            </div>,
-            document.body,
-          )}
-      </nav>
-    </>
-
-*/
