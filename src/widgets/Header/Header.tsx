@@ -10,7 +10,9 @@ const Header = () => {
         theCocktails
       </Link>
       <Navbar />
-      <Search />
+      <div className={styles.header__search}>
+        <Search />
+      </div>
     </header>
   );
 };

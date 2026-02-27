@@ -21,3 +21,12 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .list {
+    &__item {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

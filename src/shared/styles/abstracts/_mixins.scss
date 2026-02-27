@@ -10,8 +10,8 @@
   border-radius: $radius;
 }
 
-@mixin layout-bar {
-  height: 40px;
+@mixin layout-bar($height: 40px) {
+  height: $height;
   width: 100%;
   //padding: 10px;
   @include d-flex();
