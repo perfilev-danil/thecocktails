@@ -8,3 +8,10 @@
   flex-shrink: 0;
   overflow: hidden;
 }
+
+@media (max-width: 800px) {
+  .options {
+    height: 30%;
+    width: 100%;
+  }
+}
