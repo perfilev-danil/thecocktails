@@ -2,7 +2,7 @@ import styles from "./Navbar.module.scss";
 import { NavLink } from "react-router-dom";
 import Favorites from "../Favorites/Favorites";
 import { routes } from "../../app/providers/router/routes";
-import { getNavLinkClass } from "../../features/Cocktails/lib/utils/nav/nav";
+import { getNavLinkClass } from "../../entities/cocktail/lib/utils/nav/nav";
 const Navbar = () => {
   const links = [
     { path: routes.Categories, label: "Categories" },

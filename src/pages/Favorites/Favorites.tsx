@@ -1,8 +1,8 @@
 import styles from "./Favorites.module.scss";
 import { useAppSelector } from "../../app/providers/hooks/hooks";
-import { selectFavoritesByIds } from "../../features/Cocktails/model/favoritesSelectors";
-import { useGetFavoriteCocktailsQuery } from "../../features/Cocktails/api/cocktailsApi";
-import List from "../../features/Cocktails/ui/List/List";
+import { selectFavoritesByIds } from "../../features/Favorites/model/favoritesSelectors";
+import { useGetFavoriteCocktailsQuery } from "../../entities/cocktail/api/cocktailsApi";
+import List from "../../entities/cocktail/ui/List/List";
 import Loading from "../../shared/ui/Loading/Loading";
 
 const Favorites = () => {

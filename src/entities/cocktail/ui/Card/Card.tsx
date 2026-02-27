@@ -1,7 +1,7 @@
 import styles from "./Card.module.scss";
 import { NavLink } from "react-router-dom";
 import type { CocktailShortUI } from "../../types/ui/cocktails/cocktailShortUI";
-import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import FavoriteButton from "../../../../features/Favorites/ui/FavoriteButton/FavoriteButton";
 
 const Card = ({ item }: { item: CocktailShortUI }) => {
   return (

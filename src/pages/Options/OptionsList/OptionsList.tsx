@@ -1,6 +1,6 @@
 import styles from "./OptionsList.module.scss";
-import { useOptionedData } from "../../../features/Cocktails/hooks/useOptionedData";
-import Options from "../../../features/Cocktails/ui/Options/Options";
+import { useOptionedData } from "../../../entities/cocktail/hooks/useOptionedData";
+import Options from "../../../entities/cocktail/ui/Options/Options";
 import Loading from "../../../shared/ui/Loading/Loading";
 
 const OptionsList = () => {

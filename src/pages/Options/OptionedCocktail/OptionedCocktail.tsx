@@ -1,8 +1,8 @@
 import styles from "./OptionedCocktail.module.scss";
 import { useParams } from "react-router-dom";
-import { useGetCocktailByIdQuery } from "../../../features/Cocktails/api/cocktailsApi";
+import { useGetCocktailByIdQuery } from "../../../entities/cocktail/api/cocktailsApi";
 import { skipToken } from "@reduxjs/toolkit/query";
-import FavoriteButton from "../../../features/Cocktails/ui/FavoriteButton/FavoriteButton";
+import FavoriteButton from "../../../features/Favorites/ui/FavoriteButton/FavoriteButton";
 import BackButton from "../../../shared/ui/BackButton/BackButton";
 import React from "react";
 import Loading from "../../../shared/ui/Loading/Loading";

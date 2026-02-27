@@ -1,8 +1,8 @@
 import styles from "./SearchedCocktails.module.scss";
 import { useParams } from "react-router-dom";
-import { useGetCocktailsByNameQuery } from "../../../features/Cocktails/api/cocktailsApi";
+import { useGetCocktailsByNameQuery } from "../../../entities/cocktail/api/cocktailsApi";
 import { skipToken } from "@reduxjs/toolkit/query";
-import List from "../../../features/Cocktails/ui/List/List";
+import List from "../../../entities/cocktail/ui/List/List";
 import Loading from "../../../shared/ui/Loading/Loading";
 
 const Searched = () => {
