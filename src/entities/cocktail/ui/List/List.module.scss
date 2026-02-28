@@ -8,16 +8,20 @@
 
   &__item {
     height: calc((100% - 20px) / 2);
-    width: calc((100% - 100px) / 5);
+    width: calc((100% - 80px) / 5);
     scroll-snap-align: start;
   }
+}
+
+.list--extended {
+  padding-right: 20px;
 }
 
 @media (max-width: 800px) {
   .list {
     &__item {
       height: 100%;
-      width: calc((100% - 40px) / 2);
+      width: calc((100% - 20px) / 2);
     }
   }
 }

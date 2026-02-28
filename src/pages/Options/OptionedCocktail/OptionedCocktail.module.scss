@@ -73,3 +73,19 @@
     overflow-y: auto;
   }
 }
+
+@media (max-width: 800px) {
+  .cocktail {
+    overflow-y: auto;
+    &__card {
+      flex-direction: column;
+    }
+    &__meta {
+      width: 100%;
+    }
+    &__image {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
