@@ -1,13 +1,18 @@
 @use "../../../shared/styles/abstracts/mixins" as m;
 
 .cocktail {
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 
+  &__text {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__wrapper {
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -30,6 +35,7 @@
 
   &__card {
     @include m.d-flex($align: stretch);
+    gap: 20px;
   }
 
   &__info {
@@ -88,8 +94,13 @@
     gap: 0px;
     padding-right: 20px;
     @include m.scroll-container();
+    &__text {
+      display: flex;
+      flex-direction: column;
+    }
     &__wrapper {
-      height: 70%;
+      flex: 1;
+      min-height: 0;
     }
     &__card {
       flex-direction: column;
