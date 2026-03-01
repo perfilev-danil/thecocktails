@@ -22,59 +22,61 @@ const OptionedCocktail = () => {
     );
 
   return (
-    <article className={styles.cocktail}>
-      <div className={styles.cocktail__card}>
-        <div className={styles.cocktail__info}>
-          <nav className={styles.cocktail__navbar}>
-            <BackButton />
-          </nav>
-          <header className={styles.cocktail__head}>
-            <h1>{cocktail?.name}</h1>
-            {cocktailId && <FavoriteButton itemId={cocktailId} />}
-          </header>
+    <section className={styles.cocktail__wrapper}>
+      <nav className={styles.cocktail__navbar}>
+        <BackButton />
+      </nav>
+      <article className={styles.cocktail}>
+        <div className={styles.cocktail__card}>
+          <div className={styles.cocktail__info}>
+            <header className={styles.cocktail__head}>
+              <h1>{cocktail?.name}</h1>
+              {cocktailId && <FavoriteButton itemId={cocktailId} />}
+            </header>
+            <dl className={styles.cocktail__meta}>
+              {cocktail?.tags && (
+                <>
+                  <dt>Tags</dt>
+                  <dd>{cocktail?.tags}</dd>
+                </>
+              )}
+              {cocktail?.iba && (
+                <>
+                  <dt>IBA</dt>
+                  <dd>{cocktail?.iba}</dd>
+                </>
+              )}
+              <dt>Alcoholic</dt>
+              <dd>{cocktail?.alcoholic}</dd>
+              <dt>Glass</dt>
+              <dd>{cocktail?.glass}</dd>
+            </dl>
+          </div>
+
           <dl className={styles.cocktail__meta}>
-            {cocktail?.tags && (
-              <>
-                <dt>Tags</dt>
-                <dd>{cocktail?.tags}</dd>
-              </>
-            )}
-            {cocktail?.iba && (
-              <>
-                <dt>IBA</dt>
-                <dd>{cocktail?.iba}</dd>
-              </>
-            )}
-            <dt>Alcoholic</dt>
-            <dd>{cocktail?.alcoholic}</dd>
-            <dt>Glass</dt>
-            <dd>{cocktail?.glass}</dd>
+            {cocktail?.ingredients.map((ingredient) => {
+              return (
+                <React.Fragment key={ingredient.name}>
+                  <dt>{ingredient.name}</dt>
+                  <dd>{ingredient.measure || "to taste"}</dd>
+                </React.Fragment>
+              );
+            })}
           </dl>
+          <img
+            className={styles.cocktail__image}
+            src={cocktail?.image}
+            alt={cocktail?.name}
+          />
         </div>
 
-        <dl className={styles.cocktail__meta}>
-          {cocktail?.ingredients.map((ingredient) => {
-            return (
-              <React.Fragment key={ingredient.name}>
-                <dt>{ingredient.name}</dt>
-                <dd>{ingredient.measure || "to taste"}</dd>
-              </React.Fragment>
-            );
-          })}
-        </dl>
-        <img
-          className={styles.cocktail__image}
-          src={cocktail?.image}
-          alt={cocktail?.name}
-        />
-      </div>
-
-      <div className={styles.cocktail__instructionsWrapper}>
-        <p className={styles.cocktail__instructions}>
-          {cocktail?.instructions}
-        </p>
-      </div>
-    </article>
+        <div className={styles.cocktail__instructionsWrapper}>
+          <p className={styles.cocktail__instructions}>
+            {cocktail?.instructions}
+          </p>
+        </div>
+      </article>
+    </section>
   );
 };
 

@@ -7,7 +7,16 @@
   flex-direction: column;
   gap: 20px;
 
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   &__navbar {
+    display: flex;
+    align-items: center;
   }
 
   &__backButton {
@@ -76,9 +85,17 @@
 
 @media (max-width: 800px) {
   .cocktail {
-    overflow-y: auto;
+    gap: 0px;
+    padding-right: 20px;
+    @include m.scroll-container();
+    &__wrapper {
+      height: 70%;
+    }
     &__card {
       flex-direction: column;
+    }
+    &__head {
+      justify-content: space-between;
     }
     &__meta {
       width: 100%;
@@ -86,6 +103,7 @@
     &__image {
       height: 100%;
       width: 100%;
+      margin: 20px 0;
     }
   }
 }
