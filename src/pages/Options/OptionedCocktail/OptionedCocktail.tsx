@@ -22,18 +22,20 @@ const OptionedCocktail = () => {
     );
 
   return (
-    <section className={styles.cocktail__wrapper}>
-      <nav className={styles.cocktail__navbar}>
-        <BackButton />
-      </nav>
-      <article className={styles.cocktail}>
-        <div className={styles.cocktail__text}>
-          <div className={styles.cocktail__card}>
+    <section className={styles.cocktail}>
+      <div className={styles.cocktail__container}>
+        <nav className={styles.cocktail__navbar}>
+          <BackButton />
+        </nav>
+
+        <article className={styles.cocktail__card}>
+          <div className={styles.cocktail__content}>
             <div className={styles.cocktail__info}>
-              <header className={styles.cocktail__head}>
+              <header className={styles.cocktail__header}>
                 <h1>{cocktail?.name}</h1>
                 {cocktailId && <FavoriteButton itemId={cocktailId} />}
               </header>
+
               <dl className={styles.cocktail__meta}>
                 {cocktail?.tags && (
                   <>
@@ -55,29 +57,28 @@ const OptionedCocktail = () => {
             </div>
 
             <dl className={styles.cocktail__meta}>
-              {cocktail?.ingredients.map((ingredient) => {
-                return (
-                  <React.Fragment key={ingredient.name}>
-                    <dt>{ingredient.name}</dt>
-                    <dd>{ingredient.measure || "to taste"}</dd>
-                  </React.Fragment>
-                );
-              })}
+              {cocktail?.ingredients.map((ingredient) => (
+                <React.Fragment key={ingredient.name}>
+                  <dt>{ingredient.name}</dt>
+                  <dd>{ingredient.measure || "to taste"}</dd>
+                </React.Fragment>
+              ))}
             </dl>
-          </div>
-          <img
-            className={styles.cocktail__image}
-            src={cocktail?.image}
-            alt={cocktail?.name}
-          />
-        </div>
 
-        <div className={styles.cocktail__instructionsWrapper}>
-          <p className={styles.cocktail__instructions}>
-            {cocktail?.instructions}
-          </p>
-        </div>
-      </article>
+            <img
+              className={styles.cocktail__image}
+              src={cocktail?.image}
+              alt={cocktail?.name}
+            />
+          </div>
+
+          <div className={styles.cocktail__instructions}>
+            <p className={styles["cocktail__instructions-text"]}>
+              {cocktail?.instructions}
+            </p>
+          </div>
+        </article>
+      </div>
     </section>
   );
 };

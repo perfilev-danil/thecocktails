@@ -6,12 +6,7 @@
   flex-direction: column;
   gap: 20px;
 
-  &__text {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__wrapper {
+  &__container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -24,18 +19,15 @@
     align-items: center;
   }
 
-  &__backButton {
-  }
-
-  &__description {
+  &__card {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
 
-  &__card {
-    @include m.d-flex($align: stretch);
-    gap: 20px;
+  &__content {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__info {
@@ -44,7 +36,7 @@
     justify-content: space-between;
   }
 
-  &__head {
+  &__header {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -76,14 +68,14 @@
     @include m.bordered();
   }
 
-  &__instructionsWrapper {
+  &__instructions {
     height: 50%;
     width: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  &__instructions {
+  &__instructions-text {
     text-wrap: pretty;
     overflow-y: auto;
   }
@@ -94,23 +86,24 @@
     gap: 0px;
     padding-right: 20px;
     @include m.scroll-container();
-    &__text {
-      display: flex;
+
+    &__content {
       flex-direction: column;
     }
-    &__wrapper {
+
+    &__container {
       flex: 1;
       min-height: 0;
     }
-    &__card {
-      flex-direction: column;
-    }
-    &__head {
+
+    &__header {
       justify-content: space-between;
     }
+
     &__meta {
       width: 100%;
     }
+
     &__image {
       height: 100%;
       width: 100%;
