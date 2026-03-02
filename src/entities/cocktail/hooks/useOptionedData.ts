@@ -13,7 +13,7 @@ export const useOptionedData = () => {
   const { data: list, isLoading: isListLoading } = useGetListQuery(
     optionType ?? skipToken,
   );
-  const decodedSlug = fromSlug(optionSlug);
+  const decodedSlug = fromSlug(optionSlug ?? "");
   const { data: cocktails, isLoading: isCocktailsLoading } =
     useGetCocktailsByFilterQuery(
       optionType && decodedSlug
