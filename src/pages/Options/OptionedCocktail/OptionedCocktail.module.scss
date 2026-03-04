@@ -84,7 +84,7 @@
 @media (max-width: 800px) {
   .cocktail {
     gap: 0px;
-    padding-right: 20px;
+    padding-right: 0px;
     @include m.scroll-container();
 
     &__content {

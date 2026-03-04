@@ -2,19 +2,20 @@
 
 .list {
   @include m.scroll-container;
+
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+
+  &--extended {
+    padding-right: 20px;
+  }
 
   &__item {
     height: calc((100% - 20px) / 2);
     width: calc((100% - 80px) / 5);
     scroll-snap-align: start;
   }
-}
-
-.list--extended {
-  padding-right: 20px;
 }
 
 @media (max-width: 800px) {
@@ -31,6 +32,10 @@
     &__item {
       height: 100%;
       width: 100%;
+    }
+
+    &--extended {
+      padding-right: 0px;
     }
   }
 }
