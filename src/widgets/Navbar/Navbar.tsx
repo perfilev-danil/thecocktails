@@ -36,7 +36,7 @@ const Navbar = () => {
             </li>
           ))}
           <li>
-            <Favorites />
+            <Favorites onClick={handleClose} />
           </li>
           {isOpen && (
             <button onClick={handleClose} aria-label="Close menu">

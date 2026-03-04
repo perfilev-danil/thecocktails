@@ -11,7 +11,6 @@ const Favorites = () => {
     useGetFavoriteCocktailsQuery(favoritesByIds);
   return (
     <section className={styles.favorites}>
-      <h1>favorites</h1>
       {isLoading ? <Loading /> : <List items={cocktails ?? []} />}
     </section>
   );
