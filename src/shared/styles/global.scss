@@ -1,13 +1,10 @@
-// base
 @use "./base/normalize";
 @use "./base/reset";
 
-// tokens
 @use "./tokens/colors";
 @use "./tokens/fonts";
 @use "./tokens/typography";
 
-// abstracts
 @use "./abstracts/mixins";
 
 html,
