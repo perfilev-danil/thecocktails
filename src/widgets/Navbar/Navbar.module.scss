@@ -1,3 +1,5 @@
+@use "../../shared/styles/tokens/colors" as c;
+
 .navbar {
   &__overlay {
     display: none;
@@ -12,7 +14,7 @@
     align-items: center;
   }
   &__active {
-    color: red;
+    color: c.$color-accent;
   }
   &__burger {
     display: none;

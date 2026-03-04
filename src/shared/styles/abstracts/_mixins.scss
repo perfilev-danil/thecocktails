@@ -1,3 +1,5 @@
+@use "../tokens/colors" as c;
+
 @mixin d-flex($justify: space-between, $align: center, $wrap: nowrap) {
   display: flex;
   justify-content: $justify;
@@ -13,17 +15,8 @@
 @mixin layout-bar($height: 40px) {
   height: $height;
   width: 100%;
-  //padding: 10px;
   @include d-flex();
   @include bordered();
-  //@include blur();
-}
-
-@mixin blur {
-  background: rgba(255, 255, 255, 0.336);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(20px);
 }
 
 @mixin scroll-container {
@@ -38,11 +31,11 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: rgb(255, 255, 255);
+    background: c.$color-primary;
   }
 
   &::-webkit-scrollbar-thumb {
-    border: 1px solid rgb(255, 0, 0);
+    border: 1px solid c.$color-accent;
     border-radius: 1px;
   }
 }

@@ -1,3 +1,5 @@
+@use "../tokens/colors" as c;
+
 $font-primary:
   "Poiret",
   system-ui,
@@ -12,12 +14,13 @@ body,
   font-family: "Albert";
   line-height: 2;
   font-size: 16px;
-  color: white;
+  color: c.$color-primary;
 }
 
 .logo {
   font-family: "Homemade", Helvetica, sans-serif;
   font-size: 16px;
+  color: c.$color-accent;
 }
 
 h1 {
