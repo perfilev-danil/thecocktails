@@ -4,7 +4,7 @@ import Favorites from "../Favorites/Favorites";
 import { links } from "./links";
 import { getNavLinkClass } from "../../entities/cocktail/lib/utils/nav/nav";
 import { useEffect, useState } from "react";
-import burgerImg from "../../assets/ui/burger.svg";
+import menuImg from "../../assets/ui/menu.svg";
 import cancelImg from "../../assets/ui/cancel.svg";
 
 const Navbar = () => {
@@ -59,7 +59,7 @@ const Navbar = () => {
           onClick={handleOpen}
           aria-label="Toggle navigation menu"
         >
-          <img src={burgerImg} alt="Open menu" />
+          <img src={menuImg} alt="Open menu" />
         </button>
       </nav>
     </>
