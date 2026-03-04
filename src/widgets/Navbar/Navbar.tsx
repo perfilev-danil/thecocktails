@@ -4,6 +4,8 @@ import Favorites from "../Favorites/Favorites";
 import { links } from "./links";
 import { getNavLinkClass } from "../../entities/cocktail/lib/utils/nav/nav";
 import { useEffect, useState } from "react";
+import burgerImg from "../../assets/ui/burger.svg";
+import cancelImg from "../../assets/ui/cancel.svg";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -39,17 +41,25 @@ const Navbar = () => {
             <Favorites onClick={handleClose} />
           </li>
           {isOpen && (
-            <button onClick={handleClose} aria-label="Close menu">
-              ×
+            <button
+              className={styles.navbar__button}
+              onClick={handleClose}
+              aria-label="Close menu"
+            >
+              <img
+                className={styles.navbar__icon}
+                src={cancelImg}
+                alt="Close menu"
+              />
             </button>
           )}
         </ul>
         <button
-          className={styles.navbar__burger}
+          className={`${styles.navbar__button} ${styles.navbar__burger}`}
           onClick={handleOpen}
           aria-label="Toggle navigation menu"
         >
-          ☰
+          <img src={burgerImg} alt="Open menu" />
         </button>
       </nav>
     </>

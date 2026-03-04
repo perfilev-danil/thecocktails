@@ -17,6 +17,14 @@
   &__burger {
     display: none;
   }
+  &__button {
+    height: 20px;
+    width: 20px;
+  }
+  &__icon {
+    height: 20px;
+    width: 20px;
+  }
 }
 
 @media (max-width: 800px) {
