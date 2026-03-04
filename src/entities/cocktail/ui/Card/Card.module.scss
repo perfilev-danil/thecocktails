@@ -6,7 +6,7 @@
   height: 100%;
   transition: 0.3s ease;
   overflow: hidden;
-  border-bottom: 0.5px solid c.$color-primary;
+  @include m.bordered();
 
   &:hover &__image {
     transform: rotate(10deg) scale(1.3);

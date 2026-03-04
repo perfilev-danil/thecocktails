@@ -1,5 +1,5 @@
 @use "../../shared/styles/abstracts/mixins" as m;
 
 .footer {
-  @include m.layout-bar;
+  @include m.layout-bar();
 }

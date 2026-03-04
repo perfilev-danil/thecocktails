@@ -7,16 +7,21 @@
   flex-wrap: $wrap;
 }
 
-@mixin bordered($width: 1px, $style: solid, $color: transparent, $radius: 0px) {
+@mixin bordered(
+  $width: 1px,
+  $style: solid,
+  $color: c.$color-primary,
+  $radius: 0px
+) {
   border: $width $style $color;
   border-radius: $radius;
 }
 
 @mixin layout-bar($height: 40px) {
   height: $height;
+  min-height: $height;
   width: 100%;
   @include d-flex();
-  @include bordered();
 }
 
 @mixin scroll-container {
