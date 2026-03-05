@@ -12,7 +12,6 @@ const Searched = () => {
   );
   return (
     <section className={styles.searched}>
-      Searched
       {isLoading ? <Loading /> : <List items={cocktails ?? []} />}
     </section>
   );
