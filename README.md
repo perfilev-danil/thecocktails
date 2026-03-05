@@ -62,7 +62,7 @@ Web application for exploring cocktails using the TheCocktailDB API.
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
 - React
 - TypeScript
@@ -74,7 +74,7 @@ Web application for exploring cocktails using the TheCocktailDB API.
 
 ---
 
-## 🏗 Architecture
+## 📐 Architecture
 
 The project follows the Feature-Sliced Design (FSD) architecture.
 
@@ -105,16 +105,6 @@ npm install
 ```bash
 npm run dev
 ```
-
----
-
-## 🧪 API
-
-This project uses the public API:
-
-TheCocktailDB
-
-https://www.thecocktaildb.com/api.php
 
 ---
 
