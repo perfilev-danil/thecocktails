@@ -1,9 +1,9 @@
 @use "./base/normalize";
 @use "./base/reset";
 
-@use "./tokens/colors";
+@use "./tokens/colors" as c;
 @use "./tokens/fonts";
-@use "./tokens/typography";
+@use "./tokens/typography" as t;
 
 @use "./abstracts/mixins";
 
@@ -17,6 +17,11 @@ body,
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  font-family: t.$font-primary;
+  line-height: 2;
+  font-size: 16px;
+  color: c.$color-primary;
 }
 
 body::before {
@@ -35,6 +40,20 @@ body::before {
 
 #root {
   padding: 20px;
+}
+
+.logo {
+  font-family: t.$font-accent;
+  font-size: 14px;
+  color: c.$color-accent;
+}
+
+h1,
+h2,
+dt {
+  font-family: t.$font-primary;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 @media (max-width: 800px) {

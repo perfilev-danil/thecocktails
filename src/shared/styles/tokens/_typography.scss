@@ -1,35 +1,7 @@
-@use "../tokens/colors" as c;
-
 $font-primary:
   "Albert",
   Helvetica,
   -apple-system,
   sans-serif;
 
-$font-secondary: "Homemade", Georgia, serif;
-
-html,
-body,
-#root {
-  font-family: $font-primary;
-  line-height: 2;
-  font-size: 16px;
-  color: c.$color-primary;
-}
-
-.logo {
-  font-family: $font-secondary;
-  font-size: 14px;
-  color: c.$color-accent;
-}
-
-h1,
-h2,
-dt {
-  font-family: $font-primary;
-  font-size: 16px;
-  font-weight: normal;
-}
-
-@media (max-width: 800px) {
-}
+$font-accent: "Homemade", Georgia, serif;
