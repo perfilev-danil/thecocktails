@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Link className="logo" to="/">
-        theCocktails
-      </Link>
+      <div className={styles.header__logo}>
+        <Link className="logo" to="/">
+          theCocktails
+        </Link>
+      </div>
       <Navbar />
       <div className={styles.header__search}>
         <Search />

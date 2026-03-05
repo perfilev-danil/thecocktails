@@ -2,6 +2,14 @@
 
 .header {
   @include m.layout-bar();
+
+  &__search {
+    width: 200px;
+  }
+
+  &__logo {
+    width: 200px;
+  }
 }
 
 @media (max-width: 800px) {
