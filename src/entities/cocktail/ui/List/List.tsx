@@ -17,8 +17,8 @@ const List = ({ items }: { items: CocktailShortUI[] }) => {
     return () => window.removeEventListener("resize", check);
   }, [items]);
 
-  if (!items) {
-    return <div>no items!</div>;
+  if (!items.length) {
+    return <div style={{ textAlign: "center" }}>No items here :c</div>;
   }
   return (
     <ul
