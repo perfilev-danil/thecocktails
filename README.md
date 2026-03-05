@@ -112,4 +112,4 @@ npm run dev
 
 Distributed under the MIT License.
 
-<div align="center"> Shake. Mix. Enjoy. 🙃 Made with ❤️ by Danil Perfilev </div>
+<div align="center"> Shake. Mix. Enjoy. 🙃 Made with ❤️ by Danil Perfilev. </div>
