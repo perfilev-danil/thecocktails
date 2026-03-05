@@ -1,11 +1,10 @@
+@use "../../styles/abstracts/mixins" as m;
+
 .loading {
   height: 100%;
   width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 20px;
+  @include m.d-flex($justify: center);
 
   &__spinner {
     width: 20px;

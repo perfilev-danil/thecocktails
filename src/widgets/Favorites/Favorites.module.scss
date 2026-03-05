@@ -4,9 +4,7 @@
 .favorites {
   height: 40px;
   width: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include m.d-flex($justify: center);
   position: relative;
 
   &__icon {

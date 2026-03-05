@@ -1,3 +1,4 @@
+@use "../../shared/styles/abstracts/mixins" as m;
 @use "../../shared/styles/tokens/colors" as c;
 
 .navbar {
@@ -52,10 +53,8 @@
       transform: translate(-50%, -50%);
       height: 30%;
       width: 30%;
-      display: flex;
+      @include m.d-flex($justify: center);
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       z-index: 11;
     }
 
